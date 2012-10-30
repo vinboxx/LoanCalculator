@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Loan calculator</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="body-noise">
+
+  <div class="body-wrapper">
+
+    <div class="calculator-bg"></div>
+    <div class="shadow shadow-top"></div>
+
+    <div class="result-box">
+
+      
+      <div class="shadow shadow-bottom"></div>
+
+      <ul class="error-messages"></ul>
+
+      <div class="result ">
+        
+        <div class="summary-box">
+          <label class="label">Monthly payments</label>
+          <h3 class="summary-text monthly-payments"></h3>
+        </div>
+        <div class="summary-box">
+          <label class="label">Payoff date</label>
+          <h3 class="summary-text payoff-date"></h3>
+        </div>
+        <div class="summary-box">
+          <label class="label">Total interest</label>
+          <h3 class="summary-text total-interest"></h3>
+        </div>
+        <div class="summary-box">
+          <label class="label">Total of <span class="number-of-payments"></span> payments</label>
+          <h3 class="summary-text total-payment"></h3>
+        </div>
+        
+        <table id="payment_plan" class="table">
+          <thead>
+            <tr>
+              <th class="bg-toxic align-center">Year</th>
+              <th class="bg-toxic align-center">Principal</th>
+              <th class="bg-toxic align-center">Interest</th>
+              <th class="bg-toxic align-center">Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="monthly-row" id="monthly_template" style="display:none">
+              <td class="monthly-date align-center"></td>
+              <td class="monthly-principal align-right"></td>
+              <td class="monthly-interest align-right"></td>
+              <td class="monthly-balance align-right"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <form class="form-toxic" id="loan_form" action="index.html" method="post">  
+
+      <h3 class="form-header">LOAN CALCULATOR</h3>
+      
+      <fieldset class="form-body">
+        
+        <div class="control-group">
+          <label class="label" for="loanAmount">Loan Amount</label>
+          <input class="input" type="text" name="loanAmount" id="loanAmount" placeholder="Amount">
+        </div>
+        <div class="control-group control-group-small control-group-left">
+          <label class="label" for="interestRate">Interest Rate (%)</label>
+          <input class="input" type="text" name="interestRate" id="interestRate" placeholder="% per year">
+        </div>
+        <div class="control-group control-group-small">
+          <label class="label" for="loanTerm">Loan Term (years)</label>
+          <input class="input" type="text" name="loanTerm" id="loanTerm" placeholder="Number of years">
+        </div> 
+        <div class="control-group control-group-small control-group-left">
+          <label class="label">First payment</label>
+          <select class="select" name="loanStartMonth" id="loan_start_month">
+            <option value="01">Jan</option>
+            <option value="02">Feb</option>
+            <option value="03">Mar</option>
+            <option value="04">Apr</option>
+            <option value="05">May</option>
+            <option value="06">Jun</option>
+            <option value="07">Jul</option>
+            <option value="08">Aug</option>
+            <option value="09">Sep</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="12">Dec</option>
+          </select>
+        </div>
+        <div class="control-group control-group-small">
+          <label class="label">&nbsp;</label>
+          <select class="select" name="loanStartYear" id="loan_start_year">
+          </select>
+        </div> 
+        <div class="control-group submit">
+          <button type="submit" class="btn" id="btn_calculate">Calculate</button>
+          <div class="calculating">Calculating...</div>
+        </div>
+      </fieldset>
+
+    </form>
+
+  </div>
+
+  <script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+  <script src="js/app.js" type="text/javascript"></script>
+  
+</body>
+</html>
