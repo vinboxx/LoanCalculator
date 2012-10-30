@@ -47,34 +47,34 @@
 				<section>
 					<h2>The Proposition</h2>
 					<ul>
-						<li>Simple user interface</li>
-						<li>Payback time in years</li>
-						<li>Different loan types can have different interests</li>
-						<li>Generate a monthly payback plan</li>
-						<li>The interest is calculated every month</li>
-						<li>The application should be extended easily for other types of loans</li>
+						<li class="fragment">Simple user interface</li>
+						<li class="fragment">Payback time in years</li>
+						<li class="fragment">Different loan types can have different interests</li>
+						<li class="fragment">Generate a monthly payback plan</li>
+						<li class="fragment">The interest is calculated every month</li>
+						<li class="fragment">The application should be extended easily for other types of loans</li>
 					</ul>
 				</section>
 
-				<!-- Example of nested vertical slides -->
+				
 				<section>
-					<section>
-						<h2>Monthly Payment Formula</h2>
-						<pre><code contenteditable class="javascript formula align-center"><b>P = A / D</b></code></pre>
-						<p><small>P = Monthly Payment<br />A = Loan Amount<br />D = Discount Factor</small></p>
-						<pre><code contenteditable class="javascript formula align-center">D = {[(1 + i) ^n] - 1} / [i(1 + i)^n]</code></pre>
-						<p><small>n = Number of Periodic Payments<br />i = Periodic Interest Rate (Annual rate divided by number of payments per years)</small></p>
+					<h2>Monthly Payment Formula</h2>
+					<pre><code contenteditable class="javascript formula align-center"><b>P = A / D</b></code></pre>
+					<p><small>P = Monthly Payment<br />A = Loan Amount<br />D = Discount Factor</small></p>
+					<pre><code contenteditable class="javascript formula align-center">D = {[(1 + i) ^n] - 1} / [i(1 + i)^n]</code></pre>
+					<p><small>n = Number of Periodic Payments<br />i = Periodic Interest Rate (Annual rate divided by number of payments per years)</small></p>
 
-						<aside class="notes">
-							Source: http://banking.about.com/od/loans/a/loan_payment_calculations.htm
-						</aside>
-					</section>
-					<section>
-						<h2>Payment Plan Formula</h2>
-						<pre><code contenteditable class="javascript formula align-center"><b>This month interest = ((Interest rate/100) / 12) * Last month balance</b></code></pre>
-						<pre><code contenteditable class="javascript formula align-center"><b>This month principal = Monthly Payment - This month interest</b></code></pre>
-						<pre><code contenteditable class="javascript formula align-center"><b>This month Balance = Last month balance - This month principal</b></code></pre>
-					</section>
+					<aside class="notes">
+						Source: http://banking.about.com/od/loans/a/loan_payment_calculations.htm
+					</aside>
+					
+				</section>
+
+				<section>
+					<h2>Payment Plan Formula</h2>
+					<pre><code contenteditable class="javascript formula align-center" style="font-size:80%;"><b>This month interest = ((Interest rate/100) / 12) * Last month balance</b></code></pre>
+					<pre><code contenteditable class="javascript formula align-center"><b>This month principal = Monthly Payment - This month interest</b></code></pre>
+					<pre><code contenteditable class="javascript formula align-center"><b>This month Balance = Last month balance - This month principal</b></code></pre>
 				</section>
 
 				<section>
