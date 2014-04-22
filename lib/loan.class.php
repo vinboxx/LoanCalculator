@@ -1,19 +1,19 @@
-<?php  
-/** 
+<?php
+/**
  * Loan calculator class
- * 
+ *
  * @author Weerapat Poosri <vinboxx@gmail.com>
  */
-abstract class Loan 
+abstract class Loan
 {
-    /** 
+    /**
      * Is loan was calculated
      * @var boolean
      */
     protected $isCalculated = false;
 
-    /** 
-     * Interest rate 
+    /**
+     * Interest rate
      * @var int
      */
     protected $interest_rate;
@@ -60,9 +60,9 @@ abstract class Loan
      */
     protected $loan_start_timestamp;
 
-    /** 
+    /**
      * Sets $interest_rate to a new value
-     * 
+     *
      * @param int $rate an interest rate
      * @return void
      */
@@ -71,9 +71,9 @@ abstract class Loan
         $this->interest_rate = is_numeric($rate) ? $rate : 0;
     }
 
-    /** 
+    /**
      * Sets $loan_term to a new value
-     * 
+     *
      * @param int $month a number of months
      * @return void
      */
@@ -82,9 +82,9 @@ abstract class Loan
         $this->loan_term = is_numeric($months) ? $months : 0;
     }
 
-    /** 
+    /**
      * Sets $loan_amount to a new value
-     * 
+     *
      * @param int $amount a loan amount
      * @return void
      */
@@ -93,9 +93,9 @@ abstract class Loan
         $this->loan_amount = is_numeric($amount) ? $amount : 0;
     }
 
-    /** 
+    /**
      * Sets $loan_start_timestamp by input month and year
-     * 
+     *
      * @param int $month a loan start month
      * @param int $year a loan start year
      * @return void
@@ -103,6 +103,7 @@ abstract class Loan
     public function setLoanStart($month, $year)
     {
         try {
+            @date_default_timezone_set('UTC');
             $this->loan_start_timestamp = new DateTime($year.'-'.$month.'-01 00:00:00');
         } catch (Exception $e) {
             echo $e->getMessage();
@@ -118,9 +119,9 @@ abstract class Loan
 
 class HousingLoan extends Loan
 {
-    /** 
+    /**
      * Get monthly payments
-     * 
+     *
      * @return int the monthly payments
      */
     public function getMonthlyPayments()
@@ -131,9 +132,9 @@ class HousingLoan extends Loan
         return $this->monthly_payments;
     }
 
-    /** 
+    /**
      * Get payment plan
-     * 
+     *
      * @return array the payment plan
      */
     public function getPaymentPlan()
@@ -144,9 +145,9 @@ class HousingLoan extends Loan
         return $this->payment_plan;
     }
 
-    /** 
+    /**
      * Get total payment
-     * 
+     *
      * @return int the total payment
      */
     public function getTotalPayment()
@@ -157,9 +158,9 @@ class HousingLoan extends Loan
         return $this->total_payment;
     }
 
-    /** 
+    /**
      * Get total interest
-     * 
+     *
      * @return int the total interest
      */
     public function getTotalInterest()
@@ -170,9 +171,9 @@ class HousingLoan extends Loan
         return $this->total_interest;
     }
 
-	/** 
+	/**
      * Calculate monthly payments
-     * 
+     *
      * @return void
      */
 	private function calculateMonthlyPayments()
