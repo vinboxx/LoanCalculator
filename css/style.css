@@ -129,7 +129,6 @@ input:-moz-placeholder { color:#555; }
 	margin-left:10px;
 	z-index: 4;
 	height: 11px;
-	min-height: auto;
 }
 .shadow-bottom {
 	border-top: 1px solid rgba(0, 0, 0, 0.9);
